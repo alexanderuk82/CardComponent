@@ -21,16 +21,16 @@ Adding Interactivity:
 ## Theming
 The card component supports multiple themes. Currently, there are two primary themes: light-theme and dark-theme.
 
-Light Theme: To use the light theme, add the `light-theme` class to the `<article>` tag:
+Light Theme: To use the light theme, add the `light-theme` class to the `<body>` tag:
 
 ```html
-<article class="card light-theme">...</article>
+<body class="light-theme">...</body>
 ```
 
 Dark Theme: To use the dark theme, replace `light-theme` with `dark-theme`:
 
 ```html
-<article class="card dark-theme">...</article>
+<body class="dark-theme">...</body>
 ```
 
 Feel free to add or modify themes in the associated CSS file.
