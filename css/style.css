@@ -170,6 +170,7 @@ Card Component
 
 .mainContent .heading-3 {
     font-size: var(--heading-3);
+    line-height: 2.6rem;
 }
 .cardComponent .textContent {
     display: flex;
