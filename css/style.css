@@ -158,6 +158,7 @@ Card Component
 
 .cardComponent .imgCard:hover img {
     transform: scale(1.1);
+    filter: blur(2px);
 }
 .cardComponent .mainContent {
     display: flex;
