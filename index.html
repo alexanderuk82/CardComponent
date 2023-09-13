@@ -1,73 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>My Regular Site</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>My Regular Site</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section>
-        <h2>Welcome to My Regular Site</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          malesuada, sapien vel bibendum bibendum, sapien sapien bibendum
-          sapien, vel bibendum sapien sapien vel sapien. Sed malesuada, sapien
-          vel bibendum bibendum, sapien sapien bibendum sapien, vel bibendum
-          sapien sapien vel sapien.
-        </p>
-        <p>
-          Sed malesuada, sapien vel bibendum bibendum, sapien sapien bibendum
-          sapien, vel bibendum sapien sapien vel sapien. Sed malesuada, sapien
-          vel bibendum bibendum, sapien sapien bibendum sapien, vel bibendum
-          sapien sapien vel sapien.
-        </p>
-      </section>
-      <section>
-        <h2>About Us</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          malesuada, sapien vel bibendum bibendum, sapien sapien bibendum
-          sapien, vel bibendum sapien sapien vel sapien. Sed malesuada, sapien
-          vel bibendum bibendum, sapien sapien bibendum sapien, vel bibendum
-          sapien sapien vel sapien.
-        </p>
-        <p>
-          Sed malesuada, sapien vel bibendum bibendum, sapien sapien bibendum
-          sapien, vel bibendum sapien sapien vel sapien. Sed malesuada, sapien
-          vel bibendum bibendum, sapien sapien bibendum sapien, vel bibendum
-          sapien sapien vel sapien.
-        </p>
-      </section>
-      <section>
-        <h2>Contact Us</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          malesuada, sapien vel bibendum bibendum, sapien sapien bibendum
-          sapien, vel bibendum sapien sapien vel sapien. Sed malesuada, sapien
-          vel bibendum bibendum, sapien sapien bibendum sapien, vel bibendum
-          sapien sapien vel sapien.
-        </p>
-        <p>
-          Sed malesuada, sapien vel bibendum bibendum, sapien sapien bibendum
-          sapien, vel bibendum sapien sapien vel sapien. Sed malesuada, sapien
-          vel bibendum bibendum, sapien sapien bibendum sapien, vel bibendum
-          sapien sapien vel sapien.
-        </p>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2021 My Regular Site</p>
-    </footer>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Card component</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body class="dark-theme">
+        <article class="cardComponent">
+            <!-- "alt" text should be descriptive; if the image is decorative, use an empty alt attribute but still include it -->
+            <div class="imgCard">
+                <img
+                    src="images/image.png"
+                    alt="Neural network visualizations intertwined with circuits."
+                />
+            </div>
+
+            <main class="mainContent">
+                <section class="textContent">
+                    <h3 class="heading-3">
+                        The Evolution of Deep Learning: From Perceptrons to
+                        Transformers
+                    </h3>
+
+                    <p>
+                        Deep learning, a subset of machine learning, has roots
+                        tracing back to the middle of the 20th century. But it's
+                        the recent advancements, like the introduction of
+                        transformer architectures, that have thrust it into the
+                        spotlight.
+                    </p>
+                </section>
+                <!-- The button is inherently focusable, ensure add focus styles inside of CSS for better visibility -->
+                <button aria-label="click here to read more">
+                    <!-- Using a span with a role and aria-hidden to ensure screen readers pronounce the action correctly and ignore the decorative icon -->
+                    Read more
+                    <span role="img" aria-hidden="true" class="icon">
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="#F5FCFF"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g id="call_made" clip-path="url(#clip0_31_375)">
+                                <path
+                                    id="Vector"
+                                    d="M9 5V7H15.59L4 18.59L5.41 20L17 8.41V15H19V5H9Z"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_31_375">
+                                    <rect width="24" height="24" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </span>
+                </button>
+            </main>
+        </article>
+    </body>
 </html>

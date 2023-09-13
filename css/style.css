@@ -1,86 +1,217 @@
 /* This file contains the styles for the HTML elements in the index.html file. */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto&display=swap');
+
 /* Global styles */
+
+:root {
+    /* Light Colors */
+    --theme-bg-background: #f5fcff;
+    --main-color-900: #00113e;
+    --main-color-800: #00185a;
+    --main-color-500: #002ead;
+    --main-color-50: #b8c4e8;
+    --theme-bg-boxBackground: #ffffff;
+
+    /* Dark Colors */
+
+    --theme-dark-bg-background: #110f0f;
+    --main-dark-color-900: #0c4126;
+    --main-dark-color-800: #115e37;
+    --main-dark-color-500: #20b46a;
+    --main-dark-color-50: #c1ead5;
+    --theme-dark-bg-boxBackground: #e8f8ff;
+
+    /* Font family */
+    --font: 'Roboto', sans-serif;
+
+    /* Font sizes */
+    --heading-3: 2.1rem;
+
+    /* Spaces for border radius */
+
+    --medium: 0.8rem;
+    --small: 0.4rem;
+
+    /* Margins and paddings */
+
+    --Xlarge: 2.4rem;
+    --Large: 2rem;
+    --Medium: 1.6rem;
+    --Regular: 1.2rem;
+    --Small: 0.8rem;
+    --Xsmall: 0.6rem;
+}
+
+/* Base styling for the card component */
+
+*::before,
+*::after,
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  background-color: #fff;
+    font-family: var(--font);
+    font-size: var(--Medium);
+    line-height: var(--Large);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+/*------------------------------------ 
+
+Light Theme colours
+
+ **************************************/
+body.light-theme {
+    background-color: var(--theme-bg-background);
+    color: var(--main-color-900);
+}
+body.light-theme > .cardComponent {
+    background-color: var(--theme-bg-boxBackground);
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); */
+    border: 1px solid var(--main-color-50);
+}
+body.dark-theme > .cardComponent > .mainContent > .textContent > .heading-3 {
+    color: var(--main-color-800);
+}
+body.light-theme > .cardComponent > .mainContent button {
+    background-color: var(--main-color-500);
+    color: var(--theme-bg-background);
+}
+body.light-theme > .cardComponent > .mainContent button:hover {
+    background-color: var(--main-color-50);
+    color: var(--main-color-900);
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
+body.light-theme > .cardComponent > .mainContent button:hover svg {
+    fill: var(--main-color-900);
 }
 
-a:hover {
-  text-decoration: underline;
+/*------------------------------------ 
+
+Dark Theme colours
+
+ **************************************/
+body.dark-theme {
+    background-color: var(--theme-dark-bg-background);
+}
+body.dark-theme > .cardComponent {
+    background-color: var(--theme-dark-bg-boxBackground);
+    border: 1px solid var(--main-color-50);
+}
+body.dark-theme > .cardComponent > .mainContent > .textContent > .heading-3 {
+    color: var(--main-dark-color-800);
+}
+body.dark-theme > .cardComponent > .mainContent > .textContent p {
+    color: var(--main-dark-color-900);
+}
+body.dark-theme > .cardComponent > .mainContent button {
+    background-color: var(--main-dark-color-500);
+    color: var(--theme-dark-bg-background);
+}
+body.dark-theme > .cardComponent > .mainContent button svg {
+    fill: var(--theme-dark-bg-background);
+}
+body.dark-theme > .cardComponent > .mainContent button:hover {
+    background-color: var(--main-dark-color-50);
+    color: var(--theme-dark-bg-background);
+}
+body.dark-theme > .cardComponent > .mainContent button:hover svg {
+    fill: var(--theme-dark-bg-background);
 }
 
-/* Header styles */
-header {
-  background-color: #007bff;
-  color: #fff;
-  padding: 1rem;
+/*------------------------------------ 
+
+Card Component
+
+ **************************************/
+
+.cardComponent {
+    border-radius: var(--medium);
+    overflow: hidden;
+    width: 100%;
+    /* Maximum width to maintain readability */
+    margin: 0 auto; /* Center the card if the viewport is wider */
+}
+.cardComponent .imgCard {
+    width: 100%; /* Initially full width for mobile */
+    height: 32.2rem;
+    overflow: hidden;
+}
+.cardComponent .imgCard img {
+    transition: all 0.5s ease;
+    width: 100%; /* Initially full width for mobile */
+    object-fit: cover;
+    height: 100%;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
+.cardComponent .imgCard:hover img {
+    transform: scale(1.1);
+}
+.cardComponent .mainContent {
+    display: flex;
+    padding: 0rem var(--Medium) var(--Xlarge) var(--Medium);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Xlarge);
+    margin-top: var(--Xlarge);
 }
 
-/* Navigation styles */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
+.mainContent .heading-3 {
+    font-size: var(--heading-3);
+}
+.cardComponent .textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Medium);
+}
+.mainContent button {
+    display: flex;
+    border: none;
+    padding: var(--Small);
+    border-radius: var(--small);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    align-items: center;
+    gap: var(--Small);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+.mainContent button:focus {
+    outline: 2px solid #db1717; /* Change the color if is necessary */
+    outline-offset: 2px;
 }
 
-nav li {
-  margin: 0 1rem;
+/*------------------------------------ 
+
+Responsiveness
+
+ **************************************/
+@media (min-width: 700px) {
+    /* Adjustments for tablet and above */
+    article.cardComponent {
+        width: 36rem; /* Allow some space on the sides on tablets */
+    }
 }
 
-nav a {
-  color: #fff;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Main content styles */
-main {
-  padding: 1rem;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-section p {
-  margin-bottom: 1rem;
-}
-
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+@media (min-width: 1024px) {
+    /* Adjustments for desktop */
+    article.cardComponent {
+        width: 44rem; /* Even more space on the sides for wider screens */
+    }
 }
