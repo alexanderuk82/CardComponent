@@ -12,7 +12,7 @@ Include the Component: Ensure the component's HTML and associated CSS are includ
 
 Content Customization:
 - Replace the src attribute of the `<img>` tag with the desired image path.
-- Adjust the content of the `<h2>` and `<p>` tags for the title and paragraph respectively.
+- Adjust the content of the `<h3>` and `<p>` tags for the title and paragraph respectively.
 - Modify the aria-label attribute of the `<button>` to reflect the button's purpose.
 
 Adding Interactivity:
