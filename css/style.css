@@ -208,6 +208,16 @@ Responsiveness
     /* Adjustments for tablet and above */
     article.cardComponent {
         width: 36rem; /* Allow some space on the sides on tablets */
+        padding: var(--Medium);
+    }
+
+    .cardComponent .mainContent {
+        padding-inline: 0;
+    }
+
+    .cardComponent .imgCard img,
+    .cardComponent .imgCard {
+        border-radius: var(--small);
     }
 }
 
